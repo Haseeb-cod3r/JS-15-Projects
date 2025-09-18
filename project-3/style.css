@@ -1,0 +1,117 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  color: white;
+  background-color: rgb(248, 179, 172);
+  width: 100vw;
+  height: 100vh;
+}
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(
+    90deg,
+    rgb(248, 179, 172),
+    rgb(248, 200, 172),
+    rgb(248, 172, 193)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+  text-align: center;
+  padding: 20px;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: rgb(25, 39, 79);
+}
+.hero textarea {
+  width: 100%;
+  max-width: 500px;
+  min-height: 300px;
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  resize: none;
+}
+.hero textarea::placeholder {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+.row {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.row button {
+  width: 150px;
+  padding: 10px;
+  border-radius: 60px;
+  border: 2px solid rgb(25, 39, 79);
+  color: #f8b3ac;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: rgb(25, 39, 79);
+  transition: all ease 0.33s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.row button img {
+  width: 20px;
+}
+.row button:hover {
+  background-color: #ffff;
+  color: #f8b3ac;
+}
+.row button:active {
+  background-color: rgb(25, 39, 79);
+  color: #f8b3ac;
+  transition: none;
+}
+.row select {
+  flex: 1;
+  background-color: rgb(25, 39, 79);
+  color: #ffff;
+  height: 50px;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 60px;
+  overflow: hidden;
+  appearance: none;
+  background-image: url(./images/arrow-down.png);
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position-x: calc(100% - 20px);
+  background-position-y: 20px;
+}
+
+@media (max-width: 507px) {
+  .row button {
+    flex: 1;
+  }
+}
+@media (max-width: 369px) {
+  .row select {
+    background-image: none;
+  }
+}
+@media (max-width: 369px) {
+  .row select {
+    width: 250px;
+  }
+}

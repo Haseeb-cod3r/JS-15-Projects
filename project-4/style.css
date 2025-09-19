@@ -1,0 +1,143 @@
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Purple gradient */
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* ===== Heading ===== */
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: #f2e7fe;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  /* removed fadeIn animation */
+}
+
+/* ===== Form Styling ===== */
+form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 14px 18px;
+  border-radius: 14px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  /* removed fadeIn animation */
+}
+
+/* Input field */
+#search-box {
+  padding: 14px 16px;
+  border: 2px solid transparent;
+  outline: none;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 240px;
+  font-size: 1rem;
+  background: #fff;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+#search-box:focus {
+  border-color: #9d4edd;
+  box-shadow: 0 0 12px rgba(157, 78, 221, 0.7);
+  transform: scale(1.02);
+}
+
+/* Search button */
+form button {
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #9d4edd, #6a11cb);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(106, 17, 203, 0.5);
+}
+
+form button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+form button:active::after {
+  width: 300%;
+  height: 300%;
+}
+
+/* ===== Show More Button ===== */
+#show-more-btn {
+  margin: 30px auto;
+  padding: 12px 28px;
+  border: 2px solid #9d4edd;
+  border-radius: 10px;
+  background: #9d4edd;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+#show-more-btn:hover {
+  background: transparent;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(157, 78, 221, 0.4);
+}
+#show-more-btn:active {
+  background: #9d4edd;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(157, 78, 221, 0.4);
+  transition: none;
+}
+
+#search-result {
+  width: 80%;
+  margin: 100px auto 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+#search-result img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 10px;
+}

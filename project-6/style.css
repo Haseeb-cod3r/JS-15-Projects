@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier prime", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1e2f, #3a3a5c);
+  color: #fff;
+  padding: 150px 15px;
+  text-align: center;
+}
+h1 {
+  text-align: center;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 100px;
+  color: #ffffff;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+}
+
+h1 span {
+  display: inline-block;
+  animation: slideIn 2s ease-in-out infinite alternate;
+  color: #ffcc70;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(12px);
+  }
+}
+
+.stopwatch {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.stopwatch h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+  color: #f1f1f1;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  animation: pulse 2s infinite;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.buttons img {
+  width: clamp(45px, 12vw, 60px);
+  height: clamp(45px, 12vw, 60px);
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.buttons #play {
+  display: block;
+  scale: 1.4;
+}
+
+.buttons img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+.buttons img:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(255, 255, 255, 1);
+  }
+}
+
+@media (max-width: 400px) {
+  .stopwatch {
+    padding: 20px 15px;
+  }
+
+  .buttons {
+    gap: 15px;
+  }
+}

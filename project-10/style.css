@@ -84,6 +84,7 @@ nav .links ul .active {
   align-items: flex-start;
   padding: 20px;
   transition: all ease 0.5s;
+  pointer-events: none;
 }
 .sidebar li img {
   width: 20px;

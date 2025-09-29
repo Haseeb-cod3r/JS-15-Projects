@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #9cffd6, #5adbb5);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+.quote-box {
+  background: #fff;
+  color: #333;
+  max-width: 600px;
+  width: 90%;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: transform 0.3s ease;
+  animation: fadeIn 1s ease;
+}
+
+.quote-box:hover {
+  transform: translateY(-5px);
+}
+
+.quote-box h1 {
+  font-family: "Playfair", serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin-bottom: 1.2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.quote-box h1::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(90deg, #5adbb5, #4bcaa4);
+  margin: 0.4rem auto 0;
+  border-radius: 2px;
+}
+
+.quote-box blockquote {
+  font-size: 1.4rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin: 1rem 0;
+  position: relative;
+  animation: fadeInQuote 1s ease;
+}
+
+.quote-box blockquote::before,
+.quote-box blockquote::after {
+  content: '"';
+  font-size: 2rem;
+  color: #5adbb5;
+  position: absolute;
+}
+
+.quote-box blockquote::before {
+  left: -10px;
+  top: -10px;
+}
+
+.quote-box blockquote::after {
+  right: -10px;
+  bottom: -10px;
+}
+
+.quote-box span {
+  display: block;
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  color: #666;
+  font-style: italic;
+}
+
+.quote-box button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #5adbb5;
+  color: #fff;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.quote-box button:hover {
+  background: #4bcaa4;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInQuote {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0px rgba(90, 219, 181, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(90, 219, 181, 0.9);
+  }
+}
